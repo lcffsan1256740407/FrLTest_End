@@ -5,7 +5,7 @@ const router = createRouter({
     routes:[
         {
             path:'/',
-            redirect:'/Login'
+            redirect:'/Home'
         },
         {
             // 登录页面
@@ -17,7 +17,15 @@ const router = createRouter({
             // 主页
             name:'Home',
             path:'/Home',
-            component:()=>import('@/layouts/HomePage.vue')
+            redirect:'/Home/ShowHome',
+            component:()=>import('@/layouts/HomePage.vue'),
+            children:[
+                {
+                    name:'ShowHome',
+                    path:'ShowHome',
+                    component:()=>import('@/pages/showHome/index.vue')
+                }
+            ]
         }
     ],
     history:createWebHistory()

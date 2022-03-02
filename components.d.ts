@@ -6,9 +6,28 @@ declare module 'vue' {
   export interface GlobalComponents {
     Demo: typeof import('./src/components/Demo.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDropdown: typeof import('element-plus/es')['ElDropdown']
+    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
+    ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSpace: typeof import('element-plus/es')['ElSpace']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Login: typeof import('./src/components/Login/Login.vue')['default']
+    Register: typeof import('./src/components/Login/Register.vue')['default']
+    Regst: typeof import('./src/components/Login/Regst.vue')['default']
+    RightHeader: typeof import('./src/components/GloabHeader/components/RightHeader.vue')['default']
+    TopHeader: typeof import('./src/components/GloabHeader/TopHeader.vue')['default']
+    VerifyCode: typeof import('./src/components/VerifyCode/index.vue')['default']
   }
 }
 
