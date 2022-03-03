@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+  <title>上--箭头</title>
+  <g id="首页提示" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="首页（提示）" transform="translate(-104.000000, -492.000000)" fill-rule="nonzero">
+      <g id="数据概览" transform="translate(12.000000, 352.000000)">
+        <g id="1" transform="translate(40.000000, 76.000000)">
+          <g id="编组-8" transform="translate(0.000000, 63.000000)">
+            <g id="上--箭头" transform="translate(52.000000, 0.000000)">
+              <polygon id="矩形" fill="#000000" opacity="0" points="0 1 12 1 12 13 0 13"></polygon>
+              <g id="编组-5" transform="translate(6.500000, 7.500000) scale(1, -1) translate(-6.500000, -7.500000) translate(3.000000, 4.000000)" fill="#FF0018">
+                <polygon id="路径" points="2.01902919 6.99596839 2.01902919 3.20770844 4.27672956 3.20770844 4.27672956 6.99596839"></polygon>
+                <path d="M2.84631511,0.108853406 L0.120948234,2.83422028 C-0.0403160781,2.99548459 -0.0403160781,3.2535075 0.120948234,3.41477181 L6.13610708,3.41477181 C6.29737139,3.2535075 6.29737139,2.99548459 6.13610708,2.83422028 L3.44299306,0.108853406 C3.28172875,-0.0362844687 3.00757942,-0.0362844687 2.84631511,0.108853406 Z" id="路径"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -34,6 +34,7 @@ import ExamMenu from '@/components/ExamCtrolMenu/ExamMenu.vue';
         // background-color: rgb(84,92,100);
     }
     #mainContext {
+        position: relative;
         width: 100%;
         height: 100%;
         background-color: white;

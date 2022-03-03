@@ -3,10 +3,10 @@
 
 const svg = ref<HTMLElement | null>(null)
 const getData = () => {
-  svg.value ?  svg.value.classList.add('iconAnimation') : null //添加带动画的类名->开启动画
+  svg.value ? svg.value.classList.add('iconAnimation') : null //添加带动画的类名->开启动画
   setTimeout(() => {
     svg.value ? svg.value.classList.remove('iconAnimation') : null //移除->停止动画
-  }, 1000) 
+  }, 1000)
 }
 </script>
 
@@ -41,11 +41,13 @@ const getData = () => {
         <span>12000</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>12.30%</span>
         </p>
         <p>
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/bottomJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
       <div class="item">
@@ -53,11 +55,13 @@ const getData = () => {
         <span>87,676</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>12.30%</span>
         </p>
         <p>
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/bottomJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
       <div class="item">
@@ -65,47 +69,55 @@ const getData = () => {
         <span>625</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>12.30%</span>
         </p>
         <p>
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/bottomJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
       <div class="item">
         <span>考生:待分配考场</span>
-        <span>610</span>
+        <span>320</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>12.30%</span>
         </p>
         <p>
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/bottomJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
       <div class="item">
-        <span>考生:待分配考场</span>
-        <span>610</span>
+        <span>等审批信息</span>
+        <span>8</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>50%</span>
         </p>
-        <p>
+        <p style="opacity: 0;">
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
       <div class="item">
-        <span>考生:待分配考场</span>
-        <span>610</span>
+        <span>本日发送公告数</span>
+        <span>2</span>
         <p>
           <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>100%</span>
         </p>
-        <p>
+        <p style="opacity: 0;">
           <span>较前七日</span>
-          <span>↓ 2.30%</span>
+          <img src="@/assets/icons/topJT.svg" />
+          <span>2.30%</span>
         </p>
       </div>
     </el-card>
@@ -156,6 +168,13 @@ const getData = () => {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        img{
+          width: 16px;
+        }
+        p {
+          display: flex;
+          align-items: center;
+        }
         & > span:nth-child(1) {
           font-size: 14px;
         }
@@ -167,7 +186,7 @@ const getData = () => {
 
         :nth-child(3) {
           span {
-            color: rgb(22,160,88);
+            color: rgb(22, 160, 88);
           }
         }
         :nth-child(4) {

@@ -28,8 +28,6 @@
     .el-main {
     background-color: #e9eef3;
     padding: 0;
-    height: 93vh;
-    overflow: hidden;
 }
 }
 

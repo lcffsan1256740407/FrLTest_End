@@ -114,6 +114,7 @@
     align-items: center;
     justify-content: space-evenly;
     .item {
+      width: 30%;
       flex-direction: column;
       .item_header_01 {
         background-color: #7ea3b2;
@@ -146,7 +147,6 @@
         box-sizing: border-box;
         border-radius: 10px;
         padding-left: 25px;
-        width: 586px;
         height: 55px;
         line-height: 55px;
       }
@@ -155,7 +155,6 @@
         box-sizing: border-box;
         border-radius: 10px;
         padding-left: 25px;
-        width: 586px;
         line-height: 55px;
         background-color: rgb(246, 248, 250);
         padding-bottom: 30px;

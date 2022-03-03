@@ -42,8 +42,10 @@ const changeShow = () => {
 
   .box {
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -475px;
   }
 }
 </style>

@@ -20,6 +20,7 @@
         >
             <span v-show="show.three">Welcome to login.</span>
         </transition>
+        <span v-show="!show.three" style="font-size: 16px; opacity: 0;">Welcome to login.</span>
     </div>
 </template>
 
@@ -36,7 +37,6 @@ onMounted(() => {
 })
 // 动画调用函数
 const nextCartoon = () => {
-    console.log('..')
     if (!show.one) {
         console.log('执行第一段动画')
         show.one = true
@@ -63,7 +63,6 @@ const nextCartoon = () => {
     }
 }
 #welcome {
-    position: relative;
     height: 100%;
     background: linear-gradient(
             to bottom,
@@ -79,24 +78,21 @@ const nextCartoon = () => {
     background-blend-mode: multiply, multiply;
     font-size: 50px;
     color: white;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    span {
-        top: 40%;
-        left: 30%;
-        position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    :nth-child(1) {
+        margin-bottom: 5px;
     }
     :nth-child(2) {
         height: 3px;
         width: 600px;
         background-color: white;
-        top: 48%;
     }
     :nth-child(3) {
         font-size: 16px;
-        top: 50%;
+        margin-left: -455px;
     }
     // .addcartoon {
     //     animation: cartoon 1s linear infinite;
