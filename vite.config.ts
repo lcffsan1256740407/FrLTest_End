@@ -4,12 +4,15 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'  //自动加载API
 import Components from 'unplugin-vue-components/vite' //自动加载组件
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import vueJsx from '@vitejs/plugin-vue-jsx';  //VUE JSX语法
+
 
 export default defineConfig({
   server:{
     open:true //服务启动自动打开浏览器
   },
   plugins: [
+    vueJsx(),
     vue(),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],// 自动导入vue和vue-router相关函数

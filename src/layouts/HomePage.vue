@@ -6,9 +6,11 @@
     <div class="common-layout">
         <el-container>
             <el-header>
+                <!-- 顶部导航 -->
                 <TopHeader/>
             </el-header>
             <el-main>
+                <!-- 内容页面 -->
                 <router-view></router-view>
             </el-main>
         </el-container>
@@ -26,7 +28,8 @@
     .el-main {
     background-color: #e9eef3;
     padding: 0;
-    min-height: 94vh;
+    height: 93vh;
+    overflow: hidden;
 }
 }
 

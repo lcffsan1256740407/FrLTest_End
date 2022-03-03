@@ -1,19 +1,20 @@
 <template>
     <div id="header">
         <div class="header-left">
-            <img src="@/assets/headerImgs/logo.png" alt="">
+            <img src="@/assets/headerImgs/logo.png" />
             <span>外语考试报名管理平台</span>
             <el-menu
                 :default-active="activeIndex"
                 class="el-menu-demo"
-                mode="horizontal"   
-                :ellipsis="false"
+                active-text-color="#ffd04b"
                 background-color="#545c64"
                 text-color="#fff"
-                active-text-color="#ffd04b"
+                router
+                mode="horizontal"
+                :ellipsis="false"
             >
-                <el-menu-item index="1">首页</el-menu-item>
-                <el-menu-item index="2">管理中心</el-menu-item>
+                <el-menu-item index="/Home/ShowHome">首页</el-menu-item>
+                <el-menu-item index="/Home/ExamCtrol/welcome">考生管理</el-menu-item>
                 <el-menu-item index="3">审核中心</el-menu-item>
                 <el-menu-item index="4">本地生活圈</el-menu-item>
             </el-menu>
@@ -24,22 +25,26 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-const activeIndex = ref('1')    //选中的页签
+const activeIndex = ref('')    //默认选中的页签
 
-
+// 刷新页面防止el-menu-item选择状态丢失
+onMounted(() => {
+    console.log('Header组件被重新挂载')
+    activeIndex.value = window.location.pathname
+})
 </script>
 
 <style scoped lang="less">
 #header {
     display: flex;
     justify-content: space-between;
-    .header-left{
+    .header-left {
         display: flex;
         align-items: center;
-        > img{
+        > img {
             height: 56px;
         }
-        > span{
+        > span {
             font-size: 16px;
             color: white;
             margin: 0 55px 0 5px;

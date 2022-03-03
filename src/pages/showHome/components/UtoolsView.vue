@@ -28,6 +28,10 @@
       <img src="@/assets/icons/type.svg" />
       <span>看板查看</span>
     </div>
+    <div class="item">
+      <img src="@/assets/icons/type.svg" />
+      <span>看板查看</span>
+    </div>
   </el-card>
 </template>
 

@@ -3,10 +3,10 @@
 
 const svg = ref<HTMLElement | null>(null)
 const getData = () => {
-  svg.value.classList.add('iconAnimation') //添加带动画的类名->开启动画
+  svg.value ?  svg.value.classList.add('iconAnimation') : null //添加带动画的类名->开启动画
   setTimeout(() => {
-    svg.value.classList.remove('iconAnimation') //移除->停止动画
-  }, 1000);
+    svg.value ? svg.value.classList.remove('iconAnimation') : null //移除->停止动画
+  }, 1000) 
 }
 </script>
 
@@ -43,6 +43,10 @@ const getData = () => {
           <span>较昨日</span>
           <span>↑ 12.30%</span>
         </p>
+        <p>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
+        </p>
       </div>
       <div class="item">
         <span>总开放考场数</span>
@@ -50,6 +54,10 @@ const getData = () => {
         <p>
           <span>较昨日</span>
           <span>↑ 12.30%</span>
+        </p>
+        <p>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
         </p>
       </div>
       <div class="item">
@@ -59,13 +67,9 @@ const getData = () => {
           <span>较昨日</span>
           <span>↑ 12.30%</span>
         </p>
-      </div>
-      <div class="item">
-        <span>考生:待分配考场</span>
-        <span>610</span>
         <p>
-          <span>较昨日</span>
-          <span>↑ 12.30%</span>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
         </p>
       </div>
       <div class="item">
@@ -75,6 +79,10 @@ const getData = () => {
           <span>较昨日</span>
           <span>↑ 12.30%</span>
         </p>
+        <p>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
+        </p>
       </div>
       <div class="item">
         <span>考生:待分配考场</span>
@@ -82,6 +90,22 @@ const getData = () => {
         <p>
           <span>较昨日</span>
           <span>↑ 12.30%</span>
+        </p>
+        <p>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
+        </p>
+      </div>
+      <div class="item">
+        <span>考生:待分配考场</span>
+        <span>610</span>
+        <p>
+          <span>较昨日</span>
+          <span>↑ 12.30%</span>
+        </p>
+        <p>
+          <span>较前七日</span>
+          <span>↓ 2.30%</span>
         </p>
       </div>
     </el-card>
@@ -140,12 +164,21 @@ const getData = () => {
           font-weight: 500;
           margin: 6px 0;
         }
+
+        :nth-child(3) {
+          span {
+            color: rgb(22,160,88);
+          }
+        }
+        :nth-child(4) {
+          span {
+            color: tomato;
+          }
+        }
+
         p > span:nth-child(1) {
           font-size: 12px;
-          color: #000000;
-        }
-        p > span:nth-child(2) {
-          color: #00ae4f;
+          color: #7e7e7e;
         }
       }
     }

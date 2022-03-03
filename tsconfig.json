@@ -16,6 +16,6 @@
       "@/*": ["src/*"]
      }
   },
-  "include": ["src/**/*.ts","src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/config/pinia.js"],
+  "include": ["src/**/*.ts","src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/config/pinia.js", "src/components/Searchs/search.jsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
