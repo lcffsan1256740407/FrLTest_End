@@ -11,18 +11,34 @@
         <el-sub-menu index="1">
             <template #title>
                 <el-icon>
-                    <location />
+                    <Avatar />
                 </el-icon>
-                <span>考生信息</span>
+                <span>考生管理</span>
             </template>
-            <el-menu-item index="/Home/ExamCtrol/examinfolist">信息记录</el-menu-item>
-            <el-menu-item index="1-1">区域数据汇总</el-menu-item>
-            <el-menu-item index="1-3">暂未开放</el-menu-item>
-
-            <el-sub-menu index="1-4">
-                <template #title>人员管理</template>
-                <el-menu-item index="1-4-1">日志查看</el-menu-item>
-            </el-sub-menu>
+            <el-menu-item index="/Home/ExamCtrol/examinfolist">报考列表</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/ticket">准考证管理</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/tickets">成绩录入</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/studentlist">考生信息报表</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="2">
+            <template #title>
+                <el-icon>
+                    <home-filled />
+                </el-icon>
+                <span>考场管理</span>
+            </template>
+            <el-menu-item index="/Home/ExamCtrol/roomNumber">考场列表</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/roomAllot">考场资源分配</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="3">
+            <template #title>
+                <el-icon><grid /></el-icon>
+                <span>管理员模块</span>
+            </template>
+            <el-menu-item index="/Home/ExamCtrol/adminlist">管理列表</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/roomControls">权限码生成</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/roomControls">账号审批</el-menu-item>
+            <el-menu-item index="/Home/ExamCtrol/messageSend">消息发布</el-menu-item>
         </el-sub-menu>
     </el-menu>
 </template>
@@ -30,12 +46,12 @@
 <script lang="ts" setup>
 
 import {
-    Location,
+    Avatar,HomeFilled,Grid
 } from '@element-plus/icons-vue'
 
 const activeIndex = ref('')
 const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
+
 }
 
 onMounted(()=>{

@@ -4,7 +4,6 @@ const show = ref(true)
 const changeShow = () => {
   show.value = !show.value
 }
-
 </script>
 
 <template>

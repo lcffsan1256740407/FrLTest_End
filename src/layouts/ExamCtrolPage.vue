@@ -29,7 +29,8 @@ import ExamMenu from '@/components/ExamCtrolMenu/ExamMenu.vue';
         // 菜单栏样式
         .el-menu.el-menu-vertical-demo{
             width: 100%;
-            height: 94vh;
+            min-height: 94vh;
+            height: 100%;
         }
         // background-color: rgb(84,92,100);
     }

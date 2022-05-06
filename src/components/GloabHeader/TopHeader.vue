@@ -1,7 +1,8 @@
 <template>
     <div id="header">
         <div class="header-left">
-            <img src="@/assets/headerImgs/logo.png" />
+            <img src="@/assets/headerImgs/logo.png"/>
+            
             <span>外语考试报名管理平台</span>
             <el-menu
                 :default-active="activeIndex"
@@ -15,8 +16,8 @@
             >
                 <el-menu-item index="/Home/ShowHome">首页</el-menu-item>
                 <el-menu-item index="/Home/ExamCtrol/welcome">考生管理</el-menu-item>
-                <el-menu-item index="3">审核中心</el-menu-item>
-                <el-menu-item index="4">本地生活圈</el-menu-item>
+                <el-menu-item index="3">公告管理</el-menu-item>
+                <el-menu-item index="4">账号认证</el-menu-item>
             </el-menu>
         </div>
         <RightHeader />

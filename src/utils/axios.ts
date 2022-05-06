@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const Service = axios.create({
     timeout: 7000, // 请求超时时间
-    baseURL: "http://127.168.0.1:3000" //Node 服务器端口地址
+    baseURL: "http://127.168.0.1:5000" //Node 服务器端口地址
 })
 
 // 添加请求拦截器

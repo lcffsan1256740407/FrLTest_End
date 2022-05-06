@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 const datas = [
-  { state: 1, message: '于今晚12点系统进行更新' },
-  { state: 2, message: '近期开放管理员注册接口,凭下发推荐码和证件号注册..' },
-  { state: 1, message: '本地生活圈维护至下午5点..' },
-  { state: 2, message: '请留存好账号密码,暂时不开放找回密码功能' },
-  { state: 2, message: '使用本管理系统平台前,请阅读用户手册' },
+  { state: 1, message: '于今晚12点系统进行更新' ,date:'2022-03-01 12:53:21'},
+  { state: 2, message: '近期开放管理员注册接口,凭下发推荐码和证件号注册..',date:'2022-03-05 10:20:13' },
+  { state: 1, message: '考生管理模块维护至下午5点..',date:'2022-03-10 06:05:10' },
+  { state: 2, message: '请留存好账号密码,暂时不开放找回密码功能',date:'2022-03-10 13:56:50' },
+  { state: 2, message: '使用本管理系统平台前,请阅读用户手册',date:'2022-03-12 15:10:23' },
 ]
 </script>
 
@@ -27,7 +27,7 @@ const datas = [
             <span class="message">{{ item.message }}</span>
             <img src="@/assets/icons/new.svg" v-if="index < 3" />
           
-          <span class="date">2022-03-01 12:00:00</span>
+          <span class="date">{{item.date}}</span>
         </li>
       </ul>
     </el-card>

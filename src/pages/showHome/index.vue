@@ -22,13 +22,13 @@ import TestInfo from './components/TestInfo.vue';
             <DataView />
         </div>
         <!-- 工具 -->
-        <div style="width:100%">
+        <!-- <div style="width:100%">
             <UtoolsView />
-        </div>
+        </div> -->
         <!-- 考试相关信息 -->
-        <div style="width:100%">
+        <!-- <div style="width:100%">
             <TestInfo />
-        </div>
+        </div> -->
         <!-- 运营路径 -->
         <div style="width:100%">
             <Other />

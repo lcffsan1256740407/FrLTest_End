@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Register } from '@/services/login'
 import { Platform, Lock, Message } from '@element-plus/icons-vue'
 import type { ElForm } from 'element-plus'
 import { VerifyCode } from '@/utils/verifyCode';  //引入自定义验证码Hooks
@@ -13,9 +14,9 @@ const code = reactive({
     url: ''
 })
 
-// 登录表单数据
+// 注册表单数据
 const ruleForm = reactive({
-    account: '',
+    username: '',
     password: '',
     verifyCode: '',
     recomm: ''
@@ -32,7 +33,7 @@ const verifyCodeRules = (rule: any, value: any, callback: any) => {
 
 // 表单校验
 const rules = reactive({
-    account: [
+    username: [
         {
             required: true,
             message: '账号不能为空',
@@ -72,14 +73,28 @@ const submitForm = (formEl: FormInstance | undefined) => {
     formEl.validate((valid) => {
         if (valid) {
             loading.value = true
-            // 模拟请求
             setTimeout(() => {
-                router.push({
-                    name: 'Home'
+                Register(ruleForm).then(res => {
+                    if (res.data.code === '200') {
+                        ElMessage({
+                            message: '注册成功',
+                            type: 'success',
+                        })
+                        sessionStorage.setItem('username',ruleForm.username)
+                        sessionStorage.setItem('token', res.data.token)
+                        router.push({
+                            path: '/Home'
+                        })
+                    } else {
+                        loading.value = false
+                        ElMessage.error(res.data.message)
+                    }
+                }).catch(err => {
+                    loading.value = false
+                    ElMessage.error('服务器未响应,请稍后重试')
                 })
             }, 1000);
         } else {
-            console.log('error submit!')
             return false
         }
     })
@@ -106,6 +121,8 @@ const goToLogin = () => {
     emit('changeShow')
 }
 
+
+
 </script>
 
 <template>
@@ -116,34 +133,19 @@ const goToLogin = () => {
             <div class="top">后台注册入口</div>
             <div class="context">
                 <el-form ref="ruleFormRef" class="demo-ruleForm" :model="ruleForm" :rules="rules">
-                    <el-form-item prop="account">
-                        <el-input
-                            v-model="ruleForm.account"
-                            placeholder="请输入账号"
-                            :prefix-icon="Platform"
-                        ></el-input>
+                    <el-form-item prop="username">
+                        <el-input v-model="ruleForm.username" placeholder="请输入账号" :prefix-icon="Platform"></el-input>
                     </el-form-item>
                     <el-form-item prop="password">
-                        <el-input
-                            v-model="ruleForm.password"
-                            placeholder="请输入密码"
-                            :prefix-icon="Lock"
-                        ></el-input>
+                        <el-input v-model="ruleForm.password" placeholder="请输入密码" :prefix-icon="Lock"></el-input>
                     </el-form-item>
                     <el-form-item prop="recomm">
-                        <el-input
-                            v-model="ruleForm.recomm"
-                            placeholder="请输入推荐码"
-                            :prefix-icon="Platform"
-                        ></el-input>
+                        <el-input v-model="ruleForm.recomm" placeholder="请输入推荐码" :prefix-icon="Platform"></el-input>
                     </el-form-item>
                     <div class="code">
                         <el-form-item prop="verifyCode">
-                            <el-input
-                                v-model="ruleForm.verifyCode"
-                                placeholder="请输入验证码"
-                                :prefix-icon="Message"
-                            ></el-input>
+                            <el-input v-model="ruleForm.verifyCode" placeholder="请输入验证码" :prefix-icon="Message">
+                            </el-input>
                         </el-form-item>
                         <div class="code_img_Register" @click="RefreshCode"></div>
                     </div>
@@ -166,34 +168,41 @@ const goToLogin = () => {
     display: flex;
     overflow: hidden;
     box-shadow: 1px 1px 5px rgb(163, 160, 160);
+
     .card-left {
         background-image: url("@/assets/loginImgs/loginPage.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         width: 55%;
     }
+
     .card-right {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         .top {
             font-size: 24px;
             color: #586769;
             margin-bottom: 50px;
         }
+
         .context {
             width: 300px;
+
             &:deep(.el-input__inner) {
                 height: 35px;
             }
+
             &:deep(.el-form-item__error) {
                 margin: 1px 3px;
             }
 
             .code {
                 display: flex;
+
                 .code_img_Register {
                     width: 90px;
                     height: 35px;
@@ -201,6 +210,7 @@ const goToLogin = () => {
                     cursor: pointer;
                 }
             }
+
             .el-button {
                 margin-top: 10px;
                 padding: 20px 0;
@@ -209,18 +219,21 @@ const goToLogin = () => {
                 letter-spacing: 8px;
             }
         }
+
         .footers {
             width: 100%;
             margin-top: 10px;
             display: flex;
             justify-content: flex-end;
             padding-right: 55px;
+
             span {
                 cursor: pointer;
                 float: right;
                 padding-right: 10px;
                 margin-top: 30px;
                 font-size: 13px;
+
                 // color: rgb(42, 159, 243);
                 &:hover {
                     color: rgb(64, 158, 255);

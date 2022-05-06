@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
     <div id="right-header">
         <!-- 推荐码 -->
@@ -42,16 +38,26 @@
             <span class="el-dropdown-link">
                 <!-- 用户头像 -->
                 <img src="@/assets/headerImgs/author.jpg" class="authorImg" />
-                <span>18688888888</span>
+                <span>{{username || 6655}}</span>
             </span>
             <template #dropdown>
                 <el-dropdown-menu>
-                    <el-dropdown-item>退出登陆</el-dropdown-item>
+                    <el-dropdown-item @click="out">退出登陆</el-dropdown-item>
                 </el-dropdown-menu>
             </template>
         </el-dropdown>
     </div>
 </template>
+
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+const username = ref(sessionStorage.getItem('username'))    //获取当前管理员账号
+const router = useRouter()
+const out = ()=>{
+    sessionStorage.clear()
+    router.push('/Login')
+}
+</script>
 
 <style scoped lang="less">
 #right-header {
